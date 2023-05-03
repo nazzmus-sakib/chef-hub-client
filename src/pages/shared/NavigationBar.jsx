@@ -20,8 +20,10 @@ const NavigationBar = () => {
           <a className=" normal-case text-3xl font-bold">Chef Hub</a>
         </div>
         <div className="text-center flex-1">
-          <NavLink className="mr-3 text-xl font-semibold">Home</NavLink>
-          <NavLink className="text-xl font-semibold">Blog</NavLink>
+          <NavLink className="mr-3 text-lg font-semibold">Home</NavLink>
+          <NavLink className="mr-3 text-lg font-semibold">Blog</NavLink>
+          <NavLink className=" mr-3 text-lg font-semibold">Services</NavLink>
+          <NavLink className="text-lg font-semibold">Contact</NavLink>
         </div>
         <div className="flex-none gap-2">
           <div className="dropdown dropdown-end">
@@ -31,7 +33,9 @@ const NavigationBar = () => {
                   <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                 </div>
               ) : (
-                <button class="btn btn-success">Login</button>
+                <Link to="/login">
+                  <button class="btn btn-success">Login</button>
+                </Link>
               )}
             </label>
             <ul
