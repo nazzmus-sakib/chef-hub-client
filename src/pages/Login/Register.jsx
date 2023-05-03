@@ -31,7 +31,7 @@ const Register = () => {
           .then()
           .catch((err) => console.log(err));
         toast("Registation successful✅");
-        navigate("/");
+        navigate("/home");
       })
       .catch((err) => console.log(err.message));
   };

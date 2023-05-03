@@ -12,7 +12,7 @@ const GoogleAndGithub = () => {
     googleLogin()
       .then((res) => {
         toast("Login successful✅");
-        navigate("/");
+        navigate("/home");
       })
       .catch((err) => console.log(err.message));
   };
@@ -20,7 +20,7 @@ const GoogleAndGithub = () => {
     githubLogin()
       .then((res) => {
         toast("Login successful✅");
-        navigate("/");
+        navigate("/home");
       })
       .catch((err) => console.log(err.message));
   };

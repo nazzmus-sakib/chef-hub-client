@@ -26,7 +26,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         toast("Login successful✅");
-        navigate("/");
+        navigate("/home");
       })
       .catch((err) => setError(err.message));
   };
