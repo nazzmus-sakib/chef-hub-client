@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import signUp from "../../assets/animation data/signUp.json";
 import Lottie from "lottie-react";
-import { Link, Navigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-toastify";
+import GoogleAndGithub from "../shared/GoogleAndGithub";
 const Register = () => {
   const { createUser, updateInfo } = useContext(AuthContext);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -15,13 +17,21 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photoUrl = form.url.value;
+    if (!name || !email || !password || !photoUrl) {
+      setError("Please fill-up all data");
+      return;
+    }
+    if (password.length < 6) {
+      setError("Password must be minimum 6 character");
+      return;
+    }
     createUser(email, password)
       .then((res) => {
         updateInfo(res.user, name, photoUrl)
           .then()
           .catch((err) => console.log(err));
         toast("Registation successful✅");
-        <Navigate to="/"></Navigate>;
+        navigate("/");
       })
       .catch((err) => console.log(err.message));
   };
@@ -80,6 +90,7 @@ const Register = () => {
                     name="password"
                   />
                 </div>
+                <p className="text-red-600 mt-2">{error}</p>
                 <div>
                   <p className="text-gray-500">
                     Already have an account?
@@ -94,20 +105,7 @@ const Register = () => {
                   </button>
                 </div>
               </form>
-              <div>
-                <button className="btn btn-outline btn-success w-full my-4">
-                  <span>
-                    <FcGoogle className="text-2xl mr-2"></FcGoogle>
-                  </span>
-                  Continue With Google
-                </button>
-                <button className="btn btn-outline btn-success w-full ">
-                  <span>
-                    <FaGithub className="text-2xl mr-2 text-black"></FaGithub>
-                  </span>
-                  Continue With Github
-                </button>
-              </div>
+              <GoogleAndGithub></GoogleAndGithub>
             </div>
           </div>
         </div>

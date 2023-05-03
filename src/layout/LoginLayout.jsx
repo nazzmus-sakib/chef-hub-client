@@ -1,15 +1,14 @@
 import React from "react";
 import NavigationBar from "../pages/shared/NavigationBar";
 import { Outlet } from "react-router-dom";
-import Banner from "../pages/Home/Banner";
 
-const MainLayout = () => {
+const LoginLayout = () => {
   return (
     <div>
       <NavigationBar></NavigationBar>
-      <Banner></Banner>
+      <Outlet></Outlet>
     </div>
   );
 };
 
-export default MainLayout;
+export default LoginLayout;

@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import signIn from "../../assets/animation data/signIn.json";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+
 import { AuthContext } from "../../context/AuthProvider";
 
 import { toast } from "react-toastify";
+import GoogleAndGithub from "../shared/GoogleAndGithub";
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
@@ -16,13 +17,18 @@ const Login = () => {
 
     const email = form.email.value;
     const password = form.password.value;
+    if (!email || !password) {
+      setError("Please fill-up all data");
+      return;
+    }
+
     loginUser(email, password)
       .then((res) => {
         console.log(res.user);
         toast("Login successful✅");
         navigate("/");
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => setError(err.message));
   };
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -55,6 +61,7 @@ const Login = () => {
                   name="password"
                 />
               </div>
+              <p className="text-red-600 mt-2">{error}</p>
               <div>
                 <p className="text-gray-500">
                   New to website?
@@ -67,20 +74,7 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
-            <div>
-              <button className="btn btn-outline btn-success w-full my-4">
-                <span>
-                  <FcGoogle className="text-2xl mr-2"></FcGoogle>
-                </span>
-                Continue With Google
-              </button>
-              <button className="btn btn-outline btn-success w-full ">
-                <span>
-                  <FaGithub className="text-2xl mr-2 text-black"></FaGithub>
-                </span>
-                Continue With Github
-              </button>
-            </div>
+            <GoogleAndGithub></GoogleAndGithub>
           </div>
         </div>
       </div>
