@@ -1,10 +1,30 @@
-import React from "react";
-import NavigationBar from "../shared/NavigationBar";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import React, { createRef } from "react";
 
 const Blog = () => {
+  const downloadPDF = () => {
+    const capture = document.querySelector(".blog");
+
+    html2canvas(capture).then((canvas) => {
+      const imgData = canvas.toDataURL("img/png");
+      const doc = new jsPDF("p", "mm", "a4");
+      const componentWidth = doc.internal.pageSize.getWidth();
+      const componentHeight = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, "PNG", 0, 0, componentWidth, componentHeight);
+
+      doc.save("blog.pdf");
+    });
+  };
+
   return (
-    <div className="grid grid-cols-1 gap-10 px-5 lg:px-[200px] mt-20 mb-5">
-      <h2 className="text-4xl text-center">Blog Page</h2>
+    <div className="grid grid-cols-1 gap-10 px-5 lg:px-[200px] mt-20 mb-5 blog">
+      <div>
+        <h2 className="text-4xl text-center">Blog Page</h2>
+        <button className="btn btn-sm btn-success" onClick={downloadPDF}>
+          Download
+        </button>
+      </div>
       <div className="card  bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">
