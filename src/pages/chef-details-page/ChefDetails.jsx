@@ -34,10 +34,10 @@ const ChefDetails = () => {
         </div>
       </div>
       <div className="mt-10">
-        <h2 className="text-2xl font-bold text-gray-500">
+        <h2 className="text-3xl font-bold ">
           Recipies of Chef <span className="text-3xl text-black">{name}</span>
         </h2>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-5 mt-10 mb-5">
           {recipes.map((recipe) => (
             <ShowRecipies recipe={recipe}></ShowRecipies>
           ))}
