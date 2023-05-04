@@ -1,6 +1,7 @@
 import React from "react";
 import { FaThumbsUp } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
+import ShowRecipies from "./ShowRecipies";
 
 const ChefDetails = () => {
   const chefData = useLoaderData();
@@ -11,6 +12,7 @@ const ChefDetails = () => {
     years_of_experience,
     num_recipes,
     likes,
+    recipes,
   } = chefData;
   return (
     <div className="container mt-20 ">
@@ -29,6 +31,16 @@ const ChefDetails = () => {
             <FaThumbsUp className="text-2xl text-blue-500"></FaThumbsUp>
             <span>{likes}</span>
           </div>
+        </div>
+      </div>
+      <div className="mt-10">
+        <h2 className="text-2xl font-bold text-gray-500">
+          Recipies of Chef <span className="text-3xl text-black">{name}</span>
+        </h2>
+        <div className="grid grid-cols-3 gap-8">
+          {recipes.map((recipe) => (
+            <ShowRecipies recipe={recipe}></ShowRecipies>
+          ))}
         </div>
       </div>
     </div>
