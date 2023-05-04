@@ -20,7 +20,7 @@ const ShowChefsData = ({ chefData }) => {
             <FaThumbsUp className="text-2xl text-blue-500"></FaThumbsUp>
             <span>{likes}</span>
           </p>
-          <Link to={`/chef-details/${id}`}>
+          <Link to={`/chef-recipies/${id}`}>
             {" "}
             <button className="btn btn-sm btn-success ">View Recipes</button>
           </Link>

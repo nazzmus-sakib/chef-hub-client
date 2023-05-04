@@ -2,7 +2,7 @@ import React from "react";
 import contactImg from "../../assets/contact.svg";
 const Contact = () => {
   return (
-    <div>
+    <div id="contact">
       <h2 className="text-4xl font-bold text-center mt-20">Contact With US</h2>
       <p className="text-center text-gray-500 mb-14 mt-2">
         For any query You can direct contact with us via following steps

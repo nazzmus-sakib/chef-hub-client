@@ -12,8 +12,13 @@ import ChefsDetailsLayout from "../layout/ChefsDetailsLayout";
 import ChefDetails from "../pages/chef-details-page/ChefDetails";
 import Services from "../pages/Home/Services";
 import Blog from "../pages/blog/Blog";
+import ErrorPage from "../pages/shared/ErrorPage";
 
 const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
+  },
   {
     path: "/",
     element: <LoginLayout></LoginLayout>,
@@ -42,7 +47,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/chef-details",
+    path: "/chef-recipies",
     element: <ChefsDetailsLayout></ChefsDetailsLayout>,
     children: [
       {

@@ -53,7 +53,11 @@ const NavigationBar = () => {
               Services
             </Link>
           </NavLink>
-          <NavLink className="text-lg font-semibold">Contact</NavLink>
+          <NavLink className="text-lg font-semibold">
+            <Link to="contact" smooth={true}>
+              Contact
+            </Link>
+          </NavLink>
         </div>
 
         <div className="flex-none gap-2 z-50">
