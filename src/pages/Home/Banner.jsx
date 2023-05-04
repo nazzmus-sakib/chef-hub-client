@@ -25,7 +25,7 @@ const Banner = () => {
             ingredients to create culinary masterpieces that are as beautiful as
             they are delicious.
           </p>
-          <button className="btn btn-primary">Explore More</button>
+          <button className="btn btn-success">Explore More</button>
         </div>
         <div className="w-2/5">
           <Lottie animationData={chef}></Lottie>
