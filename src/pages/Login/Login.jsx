@@ -1,16 +1,16 @@
 import React, { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import signIn from "../../assets/animation data/signIn.json";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
-
 import { toast } from "react-toastify";
 import GoogleAndGithub from "../shared/GoogleAndGithub";
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -24,16 +24,15 @@ const Login = () => {
 
     loginUser(email, password)
       .then((res) => {
-        console.log(res.user);
         toast("Login successful✅");
-        navigate("/home");
+        navigate(from, { replace: true });
       })
       .catch((err) => setError(err.message));
   };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left lg:ml-24">
+        <div className="text-center lg:text-left lg:ml-24 mt-5">
           <Lottie animationData={signIn}></Lottie>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

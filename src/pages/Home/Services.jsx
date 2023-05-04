@@ -4,11 +4,11 @@ const Services = () => {
   return (
     <div id="services">
       <h2 className="text-4xl font-bold text-center mt-20">Our Services</h2>
-      <p className="text-center text-gray-500 mb-14 mt-2">
+      <p className="text-center text-gray-500 mb-14 mt-2 px-5">
         Chef Hub: Elevate Your Dining Experience with Our Chef Services
       </p>
-      <div className="flex  items-center container ">
-        <div className="w-1/2">
+      <div className="lg:flex  items-center lg:px-[200px] px-5 ">
+        <div className="lg:w-1/2">
           <p className="mb-4 text-gray-500">
             Welcome to Chef Hub, where we bring the ultimate culinary experience
             to your doorstep. Our chef services are designed to elevate your
@@ -36,7 +36,7 @@ const Services = () => {
           </p>
         </div>
 
-        <img src={serviceImg} alt="" className="w-1/2" />
+        <img src={serviceImg} alt="" className="lg:w-1/2" />
       </div>
     </div>
   );

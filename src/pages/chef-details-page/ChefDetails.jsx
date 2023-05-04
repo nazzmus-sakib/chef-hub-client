@@ -2,7 +2,7 @@ import React from "react";
 import { FaThumbsUp } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import ShowRecipies from "./ShowRecipies";
-
+import LazyLoad from "react-lazy-load";
 const ChefDetails = () => {
   const chefData = useLoaderData();
   const {
@@ -18,7 +18,9 @@ const ChefDetails = () => {
     <div className="container mt-20 ">
       <div className="card card-side bg-base-100 shadow-xl flex">
         <figure className="w-2/5">
-          <img src={picture} alt="Movie" className="h-full" />
+          <LazyLoad>
+            <img src={picture} alt="Movie" className="h-full" />
+          </LazyLoad>
         </figure>
         <div className="card-body w-3/5">
           <h2 className="card-title">{name}</h2>

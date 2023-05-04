@@ -14,7 +14,7 @@ const ChefsData = () => {
       <p className="text-center text-gray-500 mb-20 mt-2">
         Get access to thousands of recipes from famous chefs.
       </p>
-      <div className="grid grid-cols-3 container gap-10">
+      <div className="grid lg:grid-cols-3 grid-cols-1 px-5 lg:px-[200px] gap-10">
         {chefs.map((chef) => (
           <ShowChefsData chefData={chef}></ShowChefsData>
         ))}

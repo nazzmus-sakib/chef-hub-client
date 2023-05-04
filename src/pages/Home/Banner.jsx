@@ -11,8 +11,8 @@ const Banner = () => {
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
-      <div className=" text-neutral-content container flex items-center gap-10">
-        <div className="w-3/5">
+      <div className=" text-neutral-content px-5 py-7 lg:px-[200px] lg:flex items-center lg:gap-10">
+        <div className="lg:w-3/5">
           <h1 className="mb-5 text-5xl font-bold">Wellcome To Chef Hub</h1>
           <p className="mb-5 text-justify">
             Welcome to Chef Hub, where the art of cooking meets the joy of
@@ -27,7 +27,7 @@ const Banner = () => {
           </p>
           <button className="btn btn-success">Explore More</button>
         </div>
-        <div className="w-2/5">
+        <div className="lg:w-2/5">
           <Lottie animationData={chef}></Lottie>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import LazyLoad from "react-lazy-load";
 import Rating from "react-rating";
 import { toast } from "react-toastify";
 
@@ -14,7 +15,9 @@ const ShowRecipies = ({ recipe }) => {
   return (
     <div className="card card-compact  bg-base-100 shadow-xl">
       <figure>
-        <img src={recipie_img} alt="Shoes" className="h-[250px]" />
+        <LazyLoad>
+          <img src={recipie_img} alt="Shoes" className="h-[250px]" />
+        </LazyLoad>
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
