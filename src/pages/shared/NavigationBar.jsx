@@ -22,13 +22,11 @@ const NavigationBar = () => {
   };
   return (
     <div className="">
-      <div className="lg:px-[200px] flex items-center p-5 min-h-16 w-full bg-slate-100">
-        <div className="">
-          <a className=" normal-case text-2xl lg:text-3xl font-bold">
-            Chef Hub
-          </a>
+      <div className="lg:px-[200px] lg:flex items-center p-5 min-h-16 w-full bg-slate-100">
+        <div className="text-center lg:mb-0 mb-3">
+          <a className=" normal-case text-3xl font-bold  ">Chef Hub</a>
         </div>
-        <div className="text-center flex-1">
+        <div className="text-center mx-auto lg:flex-1">
           <NavLink
             className={({ isActive, isPending }) =>
               isActive
@@ -62,16 +60,19 @@ const NavigationBar = () => {
           </NavLink>
         </div>
 
-        <div className="flex-none gap-2 z-50">
+        <div className="flex-none gap-2 z-50 text-center mt-4">
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <label
+              tabIndex={0}
+              className="btn btn-ghost btn-circle avatar block mx-auto"
+            >
               {user ? (
                 <div className="w-10 rounded-full" onMouseOver={handleHover}>
                   <img src={user && user.photoURL} />
                 </div>
               ) : (
                 <NavLink to="/login">
-                  <button class="btn btn-success">Login</button>
+                  <button className="btn btn-success  ">Login</button>
                 </NavLink>
               )}
             </label>
