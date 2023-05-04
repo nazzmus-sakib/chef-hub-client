@@ -59,7 +59,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/chefs-data/${params.id}`),
+          fetch(
+            ` https://the-chef-hub-server-nazzmus-sakib.vercel.app/chefs-data/${params.id}`
+          ),
       },
     ],
   },
