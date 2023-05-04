@@ -11,6 +11,7 @@ import LoginLayout from "../layout/LoginLayout";
 import ChefsDetailsLayout from "../layout/ChefsDetailsLayout";
 import ChefDetails from "../pages/chef-details-page/ChefDetails";
 import Services from "../pages/Home/Services";
+import Blog from "../pages/blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path: "blog",
+        element: <Blog></Blog>,
       },
     ],
   },

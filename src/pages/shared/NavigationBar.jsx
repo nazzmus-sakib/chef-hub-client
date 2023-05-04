@@ -27,13 +27,28 @@ const NavigationBar = () => {
           <a className=" normal-case text-3xl font-bold">Chef Hub</a>
         </div>
         <div className="text-center flex-1">
-          <NavLink className="mr-3 text-lg font-semibold" to="/home">
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "text-blue-500 mr-3 text-lg font-semibold"
+                : "mr-3 text-lg font-semibold "
+            }
+            to="/home"
+          >
             Home
           </NavLink>
-          <NavLink className="mr-3 text-lg font-semibold">Blog</NavLink>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "text-blue-500 mr-3 text-lg font-semibold"
+                : "mr-3 text-lg font-semibold "
+            }
+            to="/blog"
+          >
+            Blog
+          </NavLink>
           <NavLink className=" mr-3 text-lg font-semibold">
             <Link to="services" smooth={true}>
-              {" "}
               Services
             </Link>
           </NavLink>
