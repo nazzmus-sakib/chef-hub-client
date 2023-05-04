@@ -60,7 +60,7 @@ const NavigationBar = () => {
           </NavLink>
         </div>
 
-        <div className="flex-none gap-2 z-50 text-center mt-4">
+        <div className="flex-none gap-2 z-50 lg:mt-0 text-center mt-4">
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
