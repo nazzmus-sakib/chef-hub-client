@@ -43,9 +43,9 @@ const ShowRecipies = ({ recipe }) => {
           <div>
             <button onClick={handleFavourite} disabled={disable}>
               {disable ? (
-                <FcLike className="text-2xl"></FcLike>
-              ) : (
                 <FcLikePlaceholder className="text-2xl"></FcLikePlaceholder>
+              ) : (
+                <FcLike className="text-2xl"></FcLike>
               )}
             </button>
           </div>

@@ -4,7 +4,7 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import MainLayout from "../layout/MainLayout";
+import HomeLayout from "../layout/HomeLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import LoginLayout from "../layout/LoginLayout";
@@ -38,13 +38,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <MainLayout></MainLayout>,
-    children: [
-      {
-        path: "services",
-        element: <Services></Services>,
-      },
-    ],
+    element: <HomeLayout></HomeLayout>,
   },
 
   {

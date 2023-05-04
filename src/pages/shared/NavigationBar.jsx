@@ -47,6 +47,7 @@ const NavigationBar = () => {
           >
             Blog
           </NavLink>
+
           <NavLink className=" mr-3 text-lg font-semibold">
             <Link to="services" smooth={true}>
               Services
@@ -63,9 +64,9 @@ const NavigationBar = () => {
                   <img src={user && user.photoURL} />
                 </div>
               ) : (
-                <Link to="/login">
+                <NavLink to="/login">
                   <button class="btn btn-success">Login</button>
-                </Link>
+                </NavLink>
               )}
             </label>
             <ul
