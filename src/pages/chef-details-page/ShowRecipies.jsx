@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
-import { FcLike } from "react-icons/fc";
+import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import Rating from "react-rating";
+import { toast } from "react-toastify";
 
 const ShowRecipies = ({ recipe }) => {
+  const [disable, setDisable] = useState(false);
   const { recipie_img, directions, rating, ingredients, name } = recipe;
-
+  const handleFavourite = () => {
+    toast("Added to Favourite List ✅");
+    setDisable(true);
+  };
   return (
     <div className="card card-compact  bg-base-100 shadow-xl">
       <figure>
@@ -36,8 +41,12 @@ const ShowRecipies = ({ recipe }) => {
             <p>{rating}</p>
           </div>
           <div>
-            <button>
-              <FcLike className="text-2xl"></FcLike>
+            <button onClick={handleFavourite} disabled={disable}>
+              {disable ? (
+                <FcLike className="text-2xl"></FcLike>
+              ) : (
+                <FcLikePlaceholder className="text-2xl"></FcLikePlaceholder>
+              )}
             </button>
           </div>
         </div>

@@ -10,6 +10,7 @@ import Register from "../pages/Login/Register";
 import LoginLayout from "../layout/LoginLayout";
 import ChefsDetailsLayout from "../layout/ChefsDetailsLayout";
 import ChefDetails from "../pages/chef-details-page/ChefDetails";
+import Services from "../pages/Home/Services";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,14 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: "services",
+        element: <Services></Services>,
+      },
+    ],
   },
+
   {
     path: "/chef-details",
     element: <ChefsDetailsLayout></ChefsDetailsLayout>,

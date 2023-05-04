@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import { Link, Element } from "react-scroll";
 
 const NavigationBar = () => {
   const [hover, setHover] = useState(false);
@@ -30,9 +31,15 @@ const NavigationBar = () => {
             Home
           </NavLink>
           <NavLink className="mr-3 text-lg font-semibold">Blog</NavLink>
-          <NavLink className=" mr-3 text-lg font-semibold">Services</NavLink>
+          <NavLink className=" mr-3 text-lg font-semibold">
+            <Link to="services" smooth={true}>
+              {" "}
+              Services
+            </Link>
+          </NavLink>
           <NavLink className="text-lg font-semibold">Contact</NavLink>
         </div>
+
         <div className="flex-none gap-2 z-50">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
