@@ -21,10 +21,10 @@ const NavigationBar = () => {
       .catch((err) => console.log(err.message));
   };
   return (
-    <div className="">
+    <div className="navigation">
       <div className="lg:px-[200px] lg:flex items-center p-5 min-h-16 w-full bg-slate-100">
         <div className="text-center lg:mb-0 mb-3">
-          <a className=" normal-case text-3xl font-bold  ">Chef Hub</a>
+          <a className=" normal-case text-3xl font-bold ">Chef Hub</a>
         </div>
         <div className="text-center mx-auto lg:flex-1">
           <NavLink

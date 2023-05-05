@@ -7,7 +7,9 @@ const ChefsDetailsLayout = () => {
   return (
     <div>
       <NavigationBar></NavigationBar>
-      <Outlet></Outlet>
+      <div style={{ minHeight: "calc(100vh - 144px)" }}>
+        <Outlet></Outlet>
+      </div>
       <ScrollRestoration></ScrollRestoration>
       <Footer></Footer>
     </div>

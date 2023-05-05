@@ -16,7 +16,7 @@ const ChefsData = () => {
       </p>
       <div className="grid lg:grid-cols-3 grid-cols-1 px-5 lg:px-[200px] gap-10">
         {chefs.map((chef) => (
-          <ShowChefsData chefData={chef}></ShowChefsData>
+          <ShowChefsData chefData={chef} key={chef.id}></ShowChefsData>
         ))}
       </div>
     </div>

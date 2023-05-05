@@ -7,8 +7,9 @@ const LoginLayout = () => {
   return (
     <div>
       <NavigationBar></NavigationBar>
-      <Outlet></Outlet>
-
+      <div style={{ minHeight: "calc(100vh - 144px)" }}>
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );

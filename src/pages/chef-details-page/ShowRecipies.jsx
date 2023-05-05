@@ -16,13 +16,15 @@ const ShowRecipies = ({ recipe }) => {
     <div className="card card-compact  bg-base-100 shadow-xl">
       <figure>
         <LazyLoad>
-          <img src={recipie_img} alt="Shoes" className="h-[250px]" />
+          <img src={recipie_img} alt="recipie" className="h-[250px] w-full" />
         </LazyLoad>
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
-        {ingredients.map((ingredient) => (
-          <li className="list-[square] text-gray-500">{ingredient}</li>
+        {ingredients.map((ingredient, idx) => (
+          <li className="list-[square] text-gray-500" key={idx}>
+            {ingredient}
+          </li>
         ))}
         <div className="mt-3">
           <p>
